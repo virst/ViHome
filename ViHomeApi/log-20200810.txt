@@ -1,0 +1,170 @@
+2020-08-10T07:37:50.5744516+05:00  [INF] Entity Framework Core "3.1.6" initialized '"ViHomeContext"' using provider '"Microsoft.EntityFrameworkCore.Sqlite"' with options: "None" (9958f5bb)
+2020-08-10T07:37:51.1943717+05:00  [INF] Executed DbCommand ("13"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*) FROM \"sqlite_master\" WHERE \"type\" = 'table' AND \"rootpage\" IS NOT NULL;" (0723d8ff)
+2020-08-10T07:37:51.4637766+05:00  [INF] Executed DbCommand ("3"ms) [Parameters=["@__id_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT \"t\".\"Id\", \"t\".\"DeviceName\", \"t0\".\"Id\", \"t0\".\"Configuration\", \"t0\".\"DeviceId\", \"t0\".\"Direction\", \"t0\".\"ParameterId\", \"t0\".\"Period\", \"t0\".\"Id0\", \"t0\".\"ParameterName\", \"t0\".\"Properties\", \"t0\".\"SingleValue\", \"t0\".\"Type\"
+FROM (
+    SELECT \"d\".\"Id\", \"d\".\"DeviceName\"
+    FROM \"Devices\" AS \"d\"
+    WHERE \"d\".\"Id\" = @__id_0
+    LIMIT 1
+) AS \"t\"
+LEFT JOIN (
+    SELECT \"p\".\"Id\", \"p\".\"Configuration\", \"p\".\"DeviceId\", \"p\".\"Direction\", \"p\".\"ParameterId\", \"p\".\"Period\", \"p0\".\"Id\" AS \"Id0\", \"p0\".\"ParameterName\", \"p0\".\"Properties\", \"p0\".\"SingleValue\", \"p0\".\"Type\"
+    FROM \"ParameterDirections\" AS \"p\"
+    LEFT JOIN \"Parameters\" AS \"p0\" ON \"p\".\"ParameterId\" = \"p0\".\"Id\"
+) AS \"t0\" ON \"t\".\"Id\" = \"t0\".\"DeviceId\"
+ORDER BY \"t\".\"Id\", \"t0\".\"Id\"" (0723d8ff)
+2020-08-10T07:38:20.0690175+05:00  [INF] Executed DbCommand ("0"ms) [Parameters=["@__ParamId_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT \"p\".\"Id\", \"p\".\"ParameterName\", \"p\".\"Properties\", \"p\".\"SingleValue\", \"p\".\"Type\"
+FROM \"Parameters\" AS \"p\"
+WHERE \"p\".\"Id\" = @__ParamId_0
+LIMIT 1" (0723d8ff)
+2020-08-10T07:38:20.0811504+05:00  [INF] Executed DbCommand ("1"ms) [Parameters=["@__ParamId_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM \"ParameterValues\" AS \"p\"
+WHERE \"p\".\"ParameterId\" = @__ParamId_0" (0723d8ff)
+2020-08-10T07:38:20.1770218+05:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@p0='?', @p1='?', @p2='?' (Size = 1)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"ParameterValues\" (\"Moment\", \"ParameterId\", \"Val\")
+VALUES (@p0, @p1, @p2);
+SELECT \"Id\"
+FROM \"ParameterValues\"
+WHERE changes() = 1 AND \"rowid\" = last_insert_rowid();" (0723d8ff)
+2020-08-10T07:49:15.5894118+05:00  [INF] Entity Framework Core "3.1.6" initialized '"ViHomeContext"' using provider '"Microsoft.EntityFrameworkCore.Sqlite"' with options: "None" (9958f5bb)
+2020-08-10T07:49:15.7432175+05:00  [INF] Executed DbCommand ("14"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*) FROM \"sqlite_master\" WHERE \"type\" = 'table' AND \"rootpage\" IS NOT NULL;" (0723d8ff)
+2020-08-10T07:49:15.9498281+05:00  [INF] Executed DbCommand ("3"ms) [Parameters=["@__id_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT \"t\".\"Id\", \"t\".\"DeviceName\", \"t0\".\"Id\", \"t0\".\"Configuration\", \"t0\".\"DeviceId\", \"t0\".\"Direction\", \"t0\".\"ParameterId\", \"t0\".\"Period\", \"t0\".\"Id0\", \"t0\".\"ParameterName\", \"t0\".\"Properties\", \"t0\".\"SingleValue\", \"t0\".\"Type\"
+FROM (
+    SELECT \"d\".\"Id\", \"d\".\"DeviceName\"
+    FROM \"Devices\" AS \"d\"
+    WHERE \"d\".\"Id\" = @__id_0
+    LIMIT 1
+) AS \"t\"
+LEFT JOIN (
+    SELECT \"p\".\"Id\", \"p\".\"Configuration\", \"p\".\"DeviceId\", \"p\".\"Direction\", \"p\".\"ParameterId\", \"p\".\"Period\", \"p0\".\"Id\" AS \"Id0\", \"p0\".\"ParameterName\", \"p0\".\"Properties\", \"p0\".\"SingleValue\", \"p0\".\"Type\"
+    FROM \"ParameterDirections\" AS \"p\"
+    LEFT JOIN \"Parameters\" AS \"p0\" ON \"p\".\"ParameterId\" = \"p0\".\"Id\"
+) AS \"t0\" ON \"t\".\"Id\" = \"t0\".\"DeviceId\"
+ORDER BY \"t\".\"Id\", \"t0\".\"Id\"" (0723d8ff)
+2020-08-10T07:49:28.9156760+05:00  [INF] Executed DbCommand ("0"ms) [Parameters=["@__ParamId_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT \"p\".\"Id\", \"p\".\"ParameterName\", \"p\".\"Properties\", \"p\".\"SingleValue\", \"p\".\"Type\"
+FROM \"Parameters\" AS \"p\"
+WHERE \"p\".\"Id\" = @__ParamId_0
+LIMIT 1" (0723d8ff)
+2020-08-10T07:49:28.9410997+05:00  [INF] Executed DbCommand ("16"ms) [Parameters=["@__ParamId_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM \"ParameterValues\" AS \"p\"
+WHERE \"p\".\"ParameterId\" = @__ParamId_0" (0723d8ff)
+2020-08-10T07:49:28.9466496+05:00  [INF] Executed DbCommand ("0"ms) [Parameters=["@__ParamId_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT \"p\".\"Id\", \"p\".\"Moment\", \"p\".\"ParameterId\", \"p\".\"Val\"
+FROM \"ParameterValues\" AS \"p\"
+WHERE \"p\".\"ParameterId\" = @__ParamId_0
+LIMIT 1" (0723d8ff)
+2020-08-10T07:49:29.0286698+05:00  [INF] Executed DbCommand ("2"ms) [Parameters=["@p1='?', @p0='?'"], CommandType='Text', CommandTimeout='30']"
+""UPDATE \"ParameterValues\" SET \"Moment\" = @p0
+WHERE \"Id\" = @p1;
+SELECT changes();" (0723d8ff)
+2020-08-10T07:49:38.4654594+05:00  [INF] Executed DbCommand ("0"ms) [Parameters=["@__ParamId_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT \"p\".\"Id\", \"p\".\"ParameterName\", \"p\".\"Properties\", \"p\".\"SingleValue\", \"p\".\"Type\"
+FROM \"Parameters\" AS \"p\"
+WHERE \"p\".\"Id\" = @__ParamId_0
+LIMIT 1" (0723d8ff)
+2020-08-10T07:49:38.4665671+05:00  [INF] Executed DbCommand ("0"ms) [Parameters=["@__ParamId_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM \"ParameterValues\" AS \"p\"
+WHERE \"p\".\"ParameterId\" = @__ParamId_0" (0723d8ff)
+2020-08-10T07:49:38.4674204+05:00  [INF] Executed DbCommand ("0"ms) [Parameters=["@__ParamId_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT \"p\".\"Id\", \"p\".\"Moment\", \"p\".\"ParameterId\", \"p\".\"Val\"
+FROM \"ParameterValues\" AS \"p\"
+WHERE \"p\".\"ParameterId\" = @__ParamId_0
+LIMIT 1" (0723d8ff)
+2020-08-10T07:49:38.4693171+05:00  [INF] Executed DbCommand ("0"ms) [Parameters=["@p1='?', @p0='?'"], CommandType='Text', CommandTimeout='30']"
+""UPDATE \"ParameterValues\" SET \"Moment\" = @p0
+WHERE \"Id\" = @p1;
+SELECT changes();" (0723d8ff)
+2020-08-10T12:38:20.7486773+05:00  [INF] Entity Framework Core "3.1.6" initialized '"ViHomeContext"' using provider '"Microsoft.EntityFrameworkCore.Sqlite"' with options: "None" (9958f5bb)
+2020-08-10T12:38:21.2470869+05:00  [INF] Executed DbCommand ("18"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*) FROM \"sqlite_master\" WHERE \"type\" = 'table' AND \"rootpage\" IS NOT NULL;" (0723d8ff)
+2020-08-10T12:38:21.5391061+05:00  [INF] Executed DbCommand ("26"ms) [Parameters=["@__id_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT \"t\".\"Id\", \"t\".\"DeviceName\", \"t0\".\"Id\", \"t0\".\"Configuration\", \"t0\".\"DeviceId\", \"t0\".\"Direction\", \"t0\".\"ParameterId\", \"t0\".\"Period\", \"t0\".\"Id0\", \"t0\".\"ParameterName\", \"t0\".\"Properties\", \"t0\".\"SingleValue\", \"t0\".\"Type\"
+FROM (
+    SELECT \"d\".\"Id\", \"d\".\"DeviceName\"
+    FROM \"Devices\" AS \"d\"
+    WHERE \"d\".\"Id\" = @__id_0
+    LIMIT 1
+) AS \"t\"
+LEFT JOIN (
+    SELECT \"p\".\"Id\", \"p\".\"Configuration\", \"p\".\"DeviceId\", \"p\".\"Direction\", \"p\".\"ParameterId\", \"p\".\"Period\", \"p0\".\"Id\" AS \"Id0\", \"p0\".\"ParameterName\", \"p0\".\"Properties\", \"p0\".\"SingleValue\", \"p0\".\"Type\"
+    FROM \"ParameterDirections\" AS \"p\"
+    LEFT JOIN \"Parameters\" AS \"p0\" ON \"p\".\"ParameterId\" = \"p0\".\"Id\"
+) AS \"t0\" ON \"t\".\"Id\" = \"t0\".\"DeviceId\"
+ORDER BY \"t\".\"Id\", \"t0\".\"Id\"" (0723d8ff)
+2020-08-10T12:38:57.1845985+05:00  [INF] Entity Framework Core "3.1.6" initialized '"ViHomeContext"' using provider '"Microsoft.EntityFrameworkCore.Sqlite"' with options: "None" (9958f5bb)
+2020-08-10T12:38:57.3947137+05:00  [INF] Executed DbCommand ("15"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*) FROM \"sqlite_master\" WHERE \"type\" = 'table' AND \"rootpage\" IS NOT NULL;" (0723d8ff)
+2020-08-10T12:38:57.7044503+05:00  [INF] Executed DbCommand ("4"ms) [Parameters=["@__id_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT \"t\".\"Id\", \"t\".\"DeviceName\", \"t0\".\"Id\", \"t0\".\"Configuration\", \"t0\".\"DeviceId\", \"t0\".\"Direction\", \"t0\".\"ParameterId\", \"t0\".\"Period\", \"t0\".\"Id0\", \"t0\".\"ParameterName\", \"t0\".\"Properties\", \"t0\".\"SingleValue\", \"t0\".\"Type\"
+FROM (
+    SELECT \"d\".\"Id\", \"d\".\"DeviceName\"
+    FROM \"Devices\" AS \"d\"
+    WHERE \"d\".\"Id\" = @__id_0
+    LIMIT 1
+) AS \"t\"
+LEFT JOIN (
+    SELECT \"p\".\"Id\", \"p\".\"Configuration\", \"p\".\"DeviceId\", \"p\".\"Direction\", \"p\".\"ParameterId\", \"p\".\"Period\", \"p0\".\"Id\" AS \"Id0\", \"p0\".\"ParameterName\", \"p0\".\"Properties\", \"p0\".\"SingleValue\", \"p0\".\"Type\"
+    FROM \"ParameterDirections\" AS \"p\"
+    LEFT JOIN \"Parameters\" AS \"p0\" ON \"p\".\"ParameterId\" = \"p0\".\"Id\"
+) AS \"t0\" ON \"t\".\"Id\" = \"t0\".\"DeviceId\"
+ORDER BY \"t\".\"Id\", \"t0\".\"Id\"" (0723d8ff)
+2020-08-10T12:42:59.5049754+05:00  [INF] Entity Framework Core "3.1.6" initialized '"ViHomeContext"' using provider '"Microsoft.EntityFrameworkCore.Sqlite"' with options: "None" (9958f5bb)
+2020-08-10T12:42:59.8357593+05:00  [INF] Executed DbCommand ("26"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*) FROM \"sqlite_master\" WHERE \"type\" = 'table' AND \"rootpage\" IS NOT NULL;" (0723d8ff)
+2020-08-10T12:43:00.3147466+05:00  [INF] Executed DbCommand ("7"ms) [Parameters=["@__id_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT \"t\".\"Id\", \"t\".\"DeviceName\", \"t0\".\"Id\", \"t0\".\"Configuration\", \"t0\".\"DeviceId\", \"t0\".\"Direction\", \"t0\".\"ParameterId\", \"t0\".\"Period\", \"t0\".\"Id0\", \"t0\".\"ParameterName\", \"t0\".\"Properties\", \"t0\".\"SingleValue\", \"t0\".\"Type\"
+FROM (
+    SELECT \"d\".\"Id\", \"d\".\"DeviceName\"
+    FROM \"Devices\" AS \"d\"
+    WHERE \"d\".\"Id\" = @__id_0
+    LIMIT 1
+) AS \"t\"
+LEFT JOIN (
+    SELECT \"p\".\"Id\", \"p\".\"Configuration\", \"p\".\"DeviceId\", \"p\".\"Direction\", \"p\".\"ParameterId\", \"p\".\"Period\", \"p0\".\"Id\" AS \"Id0\", \"p0\".\"ParameterName\", \"p0\".\"Properties\", \"p0\".\"SingleValue\", \"p0\".\"Type\"
+    FROM \"ParameterDirections\" AS \"p\"
+    LEFT JOIN \"Parameters\" AS \"p0\" ON \"p\".\"ParameterId\" = \"p0\".\"Id\"
+) AS \"t0\" ON \"t\".\"Id\" = \"t0\".\"DeviceId\"
+ORDER BY \"t\".\"Id\", \"t0\".\"Id\"" (0723d8ff)
+2020-08-10T12:43:22.4273771+05:00  [INF] Entity Framework Core "3.1.6" initialized '"ViHomeContext"' using provider '"Microsoft.EntityFrameworkCore.Sqlite"' with options: "None" (9958f5bb)
+2020-08-10T12:43:22.5972357+05:00  [INF] Executed DbCommand ("19"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*) FROM \"sqlite_master\" WHERE \"type\" = 'table' AND \"rootpage\" IS NOT NULL;" (0723d8ff)
+2020-08-10T12:43:22.8615009+05:00  [INF] Executed DbCommand ("4"ms) [Parameters=["@__id_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT \"t\".\"Id\", \"t\".\"DeviceName\", \"t0\".\"Id\", \"t0\".\"Configuration\", \"t0\".\"DeviceId\", \"t0\".\"Direction\", \"t0\".\"ParameterId\", \"t0\".\"Period\", \"t0\".\"Id0\", \"t0\".\"ParameterName\", \"t0\".\"Properties\", \"t0\".\"SingleValue\", \"t0\".\"Type\"
+FROM (
+    SELECT \"d\".\"Id\", \"d\".\"DeviceName\"
+    FROM \"Devices\" AS \"d\"
+    WHERE \"d\".\"Id\" = @__id_0
+    LIMIT 1
+) AS \"t\"
+LEFT JOIN (
+    SELECT \"p\".\"Id\", \"p\".\"Configuration\", \"p\".\"DeviceId\", \"p\".\"Direction\", \"p\".\"ParameterId\", \"p\".\"Period\", \"p0\".\"Id\" AS \"Id0\", \"p0\".\"ParameterName\", \"p0\".\"Properties\", \"p0\".\"SingleValue\", \"p0\".\"Type\"
+    FROM \"ParameterDirections\" AS \"p\"
+    LEFT JOIN \"Parameters\" AS \"p0\" ON \"p\".\"ParameterId\" = \"p0\".\"Id\"
+) AS \"t0\" ON \"t\".\"Id\" = \"t0\".\"DeviceId\"
+ORDER BY \"t\".\"Id\", \"t0\".\"Id\"" (0723d8ff)
+2020-08-10T12:44:29.6893920+05:00  [INF] Entity Framework Core "3.1.6" initialized '"ViHomeContext"' using provider '"Microsoft.EntityFrameworkCore.Sqlite"' with options: "None" (9958f5bb)
+2020-08-10T12:44:29.8555251+05:00  [INF] Executed DbCommand ("14"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*) FROM \"sqlite_master\" WHERE \"type\" = 'table' AND \"rootpage\" IS NOT NULL;" (0723d8ff)
+2020-08-10T12:44:30.1134493+05:00  [INF] Executed DbCommand ("7"ms) [Parameters=["@__id_0='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT \"t\".\"Id\", \"t\".\"DeviceName\", \"t0\".\"Id\", \"t0\".\"Configuration\", \"t0\".\"DeviceId\", \"t0\".\"Direction\", \"t0\".\"ParameterId\", \"t0\".\"Period\", \"t0\".\"Id0\", \"t0\".\"ParameterName\", \"t0\".\"Properties\", \"t0\".\"SingleValue\", \"t0\".\"Type\"
+FROM (
+    SELECT \"d\".\"Id\", \"d\".\"DeviceName\"
+    FROM \"Devices\" AS \"d\"
+    WHERE \"d\".\"Id\" = @__id_0
+    LIMIT 1
+) AS \"t\"
+LEFT JOIN (
+    SELECT \"p\".\"Id\", \"p\".\"Configuration\", \"p\".\"DeviceId\", \"p\".\"Direction\", \"p\".\"ParameterId\", \"p\".\"Period\", \"p0\".\"Id\" AS \"Id0\", \"p0\".\"ParameterName\", \"p0\".\"Properties\", \"p0\".\"SingleValue\", \"p0\".\"Type\"
+    FROM \"ParameterDirections\" AS \"p\"
+    LEFT JOIN \"Parameters\" AS \"p0\" ON \"p\".\"ParameterId\" = \"p0\".\"Id\"
+) AS \"t0\" ON \"t\".\"Id\" = \"t0\".\"DeviceId\"
+ORDER BY \"t\".\"Id\", \"t0\".\"Id\"" (0723d8ff)

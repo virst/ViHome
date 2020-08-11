@@ -1,0 +1,6 @@
+Arduino
+	* https://github.com/bblanchon/ArduinoJson.git
+	* https://github.com/virst/OneButton
+.NetCore
+	* Microsoft.EntityFrameworkCore.Sqlite
+	* Serilog.Extensions.Logging.File

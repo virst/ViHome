@@ -1,0 +1,45 @@
+{
+    "id": 1,
+    "deviceName": "WiFi-1",
+    "parameters": [
+        {
+            "id": 1,
+            "direction": 1,
+            "parameter": {
+                "id": 1,
+                "parameterName": "Свет",
+                "type": 3,
+                "singleValue": true,
+                "properties": "{\"Count\":\"2\",\"RollMode\":\"1\"}",
+                "values": []
+            },
+            "configuration": "{\"ButtonCount\":\"1\",\"Pin-0\":\"14\"}"
+        },
+        {
+            "id": 2,
+            "direction": 2,
+            "parameter": {
+                "id": 1,
+                "parameterName": "Свет",
+                "type": 3,
+                "singleValue": true,
+                "properties": "{\"Count\":\"2\",\"RollMode\":\"1\"}",
+                "values": []
+            },
+            "configuration": "{\"Pin-0\":\"9\",\"Pin-1\":\"10\"}"
+        },
+        {
+            "id": 3,
+            "direction": 1,
+            "parameter": {
+                "id": 2,
+                "parameterName": "Погода",
+                "type": 1,
+                "singleValue": false,
+                "properties": "{\"Count\":\"1\",\"DevType\":\"ds18b20\"}",
+                "values": []
+            },
+            "configuration": "{\"Pin-0\":\"12\"}"
+        }
+    ]
+}

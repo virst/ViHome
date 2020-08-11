@@ -1,0 +1,10 @@
+PARAMETERS
+	Parameter->PropertiesDict
+		Count - Колличество интролируемух элиментов
+		RollMode - 0-только вверх;1-цикл;2-вверх/вниз
+		DevType - тип устройска сбора информации A-Аналог/ds18b20-термодатчик
+	DevParameter->ConfigurationDict
+		ButtonCount - Колличество управляющих кнопок
+		ButtonMode-n - режим кнопки n; 0 - переключение по нажатию/1 - переключатель
+		Pin-n - пин для nго элимента
+		Period - период опроса в миллисекундах
